@@ -1,25 +1,25 @@
-* {
-    font-size: 18px;
-}
-
 html {
     height: 100%;
     min-height: 100%;
 }
 
-ul.navBar {
+/* nav bar */
+#navbar {
     display: grid;
-    grid-template-columns: 50px 50px 1fr 50px 50px;
+    grid-template-columns: 50px 50px 1fr 50px 50px 50px 60px;
     grid-template-rows: 40px;
-    grid-template-areas: "about store . gmail images";
-    list-style: none;
+    grid-template-areas: "about store . gmail images menu sign-in";
+    padding: 0px 15px 0px 10px;
 }
 
 a {
     text-decoration: none;
-    color: rgba(0,0,0,0.87);
-    font-size: 13px;
+    color: rgba(0, 0, 0, 0.678);
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+a:hover {
+    text-decoration: underline;
 }
 
 #about {
@@ -42,9 +42,168 @@ a {
     justify-self: center;
     align-self: center;
 }
+#menu {
+    grid-area: menu;
+    justify-self: center;
+    align-self: center;
+    line-height: 0;
+    padding-right: 5px;
+}
+#sign-in {
+    grid-area: sign-in;
+    justify-self: center;
+    align-self: center;
+    color: white;
+    background-color:#4387fd;
+    height: 30px;
+    width: 60px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #4285f4;
+    line-height: 30px;
+}
 
-form.searchBar {
+/* main content */
+#main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 200px 100px 100px 200px;
+    grid-template-rows: 260px 70px 70px 200px;
+    grid-template-areas:
+    ". logo ."
+    ". search ."
+    ". buttons .";
 }
+
+#logo {
+    grid-area: logo;
+    justify-self: center;
+    align-self: flex-end;
+}
+#search {
+    grid-area: search;
+    height: 32px;
+    align-self: center;
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 30px;
+}
+#search:focus {
+    box-shadow: 0px .5px 5px rgb(202, 202, 202);
+}
+#search:hover {
+    box-shadow: 0px .5px 5px rgb(202, 202, 202);
+}
+#buttons {
+    grid-area: buttons;
+    justify-self: center;
+    align-self: center;
+    border: none;
+    font-size: 15px;
+    color: #5F6368;
+    padding: 10px;
+    border-radius: .5px;
+    background-color: ;
+}
+#google-search-button {
+    box-shadow: 0px .1px 2px rgb(202, 202, 202);
+    padding: 10px;
+    border-radius: .5px;
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+#random-search-button {
+    box-shadow: 0px .1px 2px rgb(202, 202, 202);
+    padding: 10px;
+    border-radius: .5px;
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+#google-search-button:hover {
+    box-shadow: 0px .5px 5px rgb(202, 202, 202);
+    border-radius: 5px;
+    color: black;
+}
+#random-search-button:hover {
+    box-shadow: 0px .5px 5px rgb(202, 202, 202);
+    border-radius: 5px;
+    color: black;
+}
+
+/* footer */
+#footer {
+    display: grid;
+    grid-template-columns: 96.27px 83.81px 143.7px auto 72.91px 65.13px 77.59px;
+    grid-template-rows: 40px;
+    grid-template-areas: "advertising business how-search-works . privacy terms settings";
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    background-color: rgb(241, 241, 241);
+}
+ #advertising {
+    grid-area: advertising;
+    justify-self: center;
+    align-self: center;
+    font-size: 14px;
+    color: #5f6368;
+ }
+ #business {
+    grid-area: business;
+    justify-self: center;
+    align-self: center;
+    font-size: 14px;
+    color: #5f6368;
+ }
+ #how-search-works {
+    grid-area: how-search-works;
+    justify-self: center;
+    align-self: center;
+    font-size: 14px;
+    color: #5f6368;
+ }
+ #privacy {
+    grid-area: privacy;
+    justify-self: center;
+    align-self: center;
+    font-size: 14px;
+    color: #5f6368;
+ }
+ #terms {
+    grid-area: terms;
+    justify-self: center;
+    align-self: center;
+    font-size: 14px;
+    color: #5f6368;
+ }
+ #settings {
+    grid-area: settings;
+    justify-self: center;
+    align-self: center;
+    font-size: 14px;
+    color: #5f6368;
+ }
